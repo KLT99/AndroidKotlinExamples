@@ -36,6 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_margin="16dp"
             android:gravity="center">
 
             <TextView
@@ -44,6 +45,7 @@
                 android:layout_height="wrap_content"
                 tools:text="RESULTADO"
                 android:textSize="26sp"
+                android:textColor="@color/white"
                 android:textStyle="bold"/>
 
             <TextView
@@ -75,7 +77,8 @@
         android:text="@string/recalculate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="VisualLintButtonSize" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

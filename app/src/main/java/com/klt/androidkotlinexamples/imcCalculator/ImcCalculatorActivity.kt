@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -114,13 +115,14 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnCalculate.setOnClickListener {
             val result = calculateIMC()
             navigateToResult(result)
+            //Toast.makeText(this, "btn calcular", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun navigateToResult(result: Double) {
 
         val intent = Intent(this, ResultIMCActivity::class.java)
-        intent.putExtra(IMC_KEY,intent)
+        intent.putExtra(IMC_KEY,result)
         startActivity(intent)
 
     }
@@ -128,6 +130,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
     private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
         val imc = currentWeight / (currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
+        //Toast.makeText(this, "calculateIMC: $imc", Toast.LENGTH_SHORT).show()
         return df.format(imc).toDouble()
     }
 
