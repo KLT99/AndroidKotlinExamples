@@ -55,6 +55,8 @@ class ImcCalculatorActivity : AppCompatActivity() {
             insets
         }
 
+        title="CALCULA IMC"
+
         initComponent()
         initListener()
         initUI()

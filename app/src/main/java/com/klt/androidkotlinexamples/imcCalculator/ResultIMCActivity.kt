@@ -20,6 +20,8 @@ class ResultIMCActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result_imcactivity)
 
+        title="RESULTADO DE CALCULO IMC"
+
         val result = intent.extras?.getDouble(IMC_KEY) ?: -1.0
 
         initComponent()

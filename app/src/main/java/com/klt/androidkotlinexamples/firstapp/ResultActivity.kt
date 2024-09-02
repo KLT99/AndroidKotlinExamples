@@ -19,6 +19,8 @@ class ResultActivity : AppCompatActivity() {
             insets
         }
 
+        title="BIENVENIDA"
+
         val tv_result = findViewById<TextView>(R.id.tvResult)
         val name: String = intent.extras?.getString("EXTRA_NAME").orEmpty()
 

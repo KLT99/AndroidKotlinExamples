@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.klt.androidkotlinexamples.firstapp.FirstAppActivity
 import com.klt.androidkotlinexamples.firstapp.ResultActivity
 import com.klt.androidkotlinexamples.imcCalculator.ImcCalculatorActivity
+import com.klt.androidkotlinexamples.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +25,16 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaluda = findViewById<Button>(R.id.btnSaluda)
         val btnImc = findViewById<Button>(R.id.btnIMC)
+        val btnTODO = findViewById<Button>(R.id.btnTODO)
 
         btnSaluda.setOnClickListener { navigateToSaluda() }
-
         btnImc.setOnClickListener { navigateToImcApp() }
+        btnTODO.setOnClickListener { navigateToTodoApp() }
+    }
+
+    private fun navigateToTodoApp() {
+        val intent = Intent(this, TodoActivity::class.java)
+        startActivity(intent)
     }
 
     private fun navigateToImcApp() {
@@ -36,7 +43,6 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun navigateToSaluda(){
-
         val intent = Intent(this, FirstAppActivity::class.java)
         startActivity(intent)
 

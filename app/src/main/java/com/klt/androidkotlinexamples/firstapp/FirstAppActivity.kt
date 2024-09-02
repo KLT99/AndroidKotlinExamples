@@ -22,6 +22,8 @@ class FirstAppActivity : AppCompatActivity() {
             insets
         }
 
+        title="Ingreso de nombre"
+
         val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
         val edtName = findViewById<AppCompatEditText>(R.id.edtName)
 

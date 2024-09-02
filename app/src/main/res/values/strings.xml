@@ -27,4 +27,7 @@
     <string name="title_obesidad">Obesidad</string>
     <string name="description_obesidad">Estás MUY por encima de lo óptimo para tu peso y altura.</string>
 
+    <string name="welcome">Bienvenido.</string>
+    <string name="todo_category">Categorías.</string>
+
 </resources>
