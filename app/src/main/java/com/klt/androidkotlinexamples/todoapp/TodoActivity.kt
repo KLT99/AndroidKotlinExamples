@@ -8,17 +8,28 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.klt.androidkotlinexamples.R
+import com.klt.androidkotlinexamples.todoapp.TaskCategory.*
 
 class TodoActivity : AppCompatActivity() {
 
     private val categories = listOf(
-        TaskCategory.Business,
-        TaskCategory.Personal,
-        TaskCategory.Other
+        Business,
+        Personal,
+        Other
+    )
+
+    private val tasks = mutableListOf(
+        Task("PruebaBusiness", Business),
+        Task("PruebaPersonal", Personal),
+        Task("PruebaOther", Other)
+
     )
 
     private lateinit var rvCategories: RecyclerView
     private lateinit var categoriesAdapter: CategoriesAdapter
+    private lateinit var rvTasks: RecyclerView
+
+    private lateinit var tasksAdapter: TasksAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +43,7 @@ class TodoActivity : AppCompatActivity() {
     private fun initComponent(){
 
         rvCategories = findViewById(R.id.rvCategories)
-
+        rvTasks = findViewById(R.id.rvTasks)
     }
 
     private fun initUI() {
@@ -41,6 +52,9 @@ class TodoActivity : AppCompatActivity() {
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //define la orientación
         rvCategories.adapter = categoriesAdapter //asigna el listado al recyclerview
 
+        tasksAdapter = TasksAdapter(tasks)
+        rvTasks.layoutManager = LinearLayoutManager(this)
+        rvTasks.adapter = tasksAdapter
     }
 
 }
