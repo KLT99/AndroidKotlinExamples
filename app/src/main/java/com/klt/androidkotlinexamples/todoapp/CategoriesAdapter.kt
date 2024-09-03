@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.klt.androidkotlinexamples.R
 
 //Muestra las listas
-class CategoriesAdapter(private val categories: List<TaskCategory>) :
+class CategoriesAdapter(private val categories: List<TaskCategory>):
     RecyclerView.Adapter<CategoriesViewHolder>() {
 
         //Crea la vista
