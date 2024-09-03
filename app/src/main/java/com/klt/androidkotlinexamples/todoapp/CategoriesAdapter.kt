@@ -13,7 +13,7 @@ class CategoriesAdapter(private val categories: List<TaskCategory>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):CategoriesViewHolder {
         //Crea un item_task_category por cada uno de los items (categorias)
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_task_category, parent, false)
-            return CategoriesViewHolder(view)
+        return CategoriesViewHolder(view)
     }
 
     //pasa el item que debe mostrar de acuerdo a cada posicion
