@@ -28,7 +28,12 @@
     <string name="description_obesidad">Estás MUY por encima de lo óptimo para tu peso y altura.</string>
 
     <string name="welcome">Bienvenido.</string>
-    <string name="todo_categories">Categorías.</string>
-    <string name="todo_tasks">Tareas.</string>
+    <string name="todo_categories">Categorías:</string>
+    <string name="todo_tasks">Tareas:</string>
+    <string name="todo_dialog_addTask">Añade tarea</string>
+    <string name="todo_dialog_Business">Negocios</string>
+    <string name="todo_dialog_personal">Personal</string>
+    <string name="todo_dialog_other">Otros</string>
+    <string name="todo_dialog_create_task">Crear tarea</string>
 
 </resources>
