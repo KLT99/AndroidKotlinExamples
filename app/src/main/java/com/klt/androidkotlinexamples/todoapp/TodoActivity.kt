@@ -55,6 +55,7 @@ class TodoActivity : AppCompatActivity() {
         tasksAdapter = TasksAdapter(tasks)
         rvTasks.layoutManager = LinearLayoutManager(this)
         rvTasks.adapter = tasksAdapter
+
     }
 
 }
