@@ -93,7 +93,7 @@ class TodoActivity : AppCompatActivity() {
 
     private fun initUI() {
 
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories){ position -> updateCategories(position) }
         rvCategories.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //define la orientación
         rvCategories.adapter = categoriesAdapter //asigna el listado al recyclerview
 
@@ -109,7 +109,19 @@ class TodoActivity : AppCompatActivity() {
         updateTask()
     }
 
+    private fun updateCategories(position: Int) {
+
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTask()
+    }
+
     private fun updateTask(){
+
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) }
+
+        tasksAdapter.tasks = newTasks
 
         tasksAdapter.notifyDataSetChanged()
 
