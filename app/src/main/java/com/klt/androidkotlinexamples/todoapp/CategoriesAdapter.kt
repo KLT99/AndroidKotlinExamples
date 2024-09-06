@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.klt.androidkotlinexamples.R
 
 //imprime las listas y las muestras
-class CategoriesAdapter(private val categories: List<TaskCategory>):
+class CategoriesAdapter(private val categories: List<TaskCategory>, private val onItemSelected:(Int) -> Unit):
     RecyclerView.Adapter<CategoriesViewHolder>() {
 
     //Crea la vista
@@ -18,7 +18,7 @@ class CategoriesAdapter(private val categories: List<TaskCategory>):
 
     //pasa el item que debe mostrar de acuerdo a cada posicion
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
-        holder.render(categories[position])
+        holder.render(categories[position], onItemSelected)
     }
 
     override fun getItemCount() = categories.size
