@@ -34,8 +34,8 @@ android {
         jvmTarget = "1.8"
     }
 
-    viewBinding{
-        enable = true
+    buildFeatures{
+        viewBinding = true
     }
 
 }
@@ -47,6 +47,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson) //herramienta que se mete dentro de retrofit para obtener datos json y convertirlo en una dataclass
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
