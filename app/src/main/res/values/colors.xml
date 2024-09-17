@@ -33,4 +33,6 @@
     <color name="todo_personal_category">#00BCD4</color>
     <color name="todo_other_category">#4CAF50</color>
 
+    <color name="superhero_item_name">#8B673AB7</color>
+
 </resources>
