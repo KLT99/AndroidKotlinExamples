@@ -52,6 +52,9 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson) //herramienta que se mete dentro de retrofit para obtener datos json y convertirlo en una dataclass
 
+    //libreria para cargar imagenes
+    implementation(libs.squareup.picasso)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
