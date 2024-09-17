@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.klt.androidkotlinexamples.databinding.ActivitySuperHeroListBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +20,8 @@ class SuperHeroListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySuperHeroListBinding
     private lateinit var retrofit: Retrofit
+
+    private lateinit var adapter: SuperHeroAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +56,11 @@ class SuperHeroListActivity : AppCompatActivity() {
 
         })
 
+        adapter = SuperHeroAdapter()
+        binding.rvSuperhero.setHasFixedSize(true)
+        binding.rvSuperhero.layoutManager = LinearLayoutManager(this)
+        binding.rvSuperhero.adapter = adapter
+
     }
 
     //muestra
@@ -70,7 +78,8 @@ class SuperHeroListActivity : AppCompatActivity() {
                 if(response != null){
                     Log.i("Couroutine", response.toString())
 
-                    runOnUiThread{
+                    runOnUiThread{ //corre en hilo principal
+                        adapter.updateList(response.superHeroes)
                         binding.progressBar.isVisible = false
                     }
                 }
