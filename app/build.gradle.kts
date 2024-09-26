@@ -55,6 +55,9 @@ dependencies {
     //libreria para cargar imagenes
     implementation(libs.squareup.picasso)
 
+    //DataStore
+    implementation(libs.androidx.datastore.preferences)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
