@@ -36,4 +36,13 @@
     <string name="todo_dialog_other">Otros</string>
     <string name="todo_dialog_create_task">Crear tarea</string>
 
+
+    <string name="setting_dark_mode">Modo Oscuro</string>
+    <string name="setting_desc_dark_mode">Activa el modo oscuro para un cambio visual</string>
+    <string name="setting_on_bluetooth">Activar Bluetooth</string>
+    <string name="setting_desc_bluetooth">Conecta perifericos sin cables</string>
+    <string name="setting_sound">Subir volumen</string>
+    <string name="setting_vibration">Vibrar para las llamadas</string>
+
+
 </resources>
